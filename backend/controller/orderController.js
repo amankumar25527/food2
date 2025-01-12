@@ -88,7 +88,7 @@ const placeOrderRazorpay = async (req, res) => {
     }
   }
   const placeOrderStripe=async(req,res)=>{
-    const origin="http://localhost:5173"
+    const origin="https://food-user-frontend.onrender.com"
     try {
       const newOrder=new orderModel({
         userId:req.body.userId,
