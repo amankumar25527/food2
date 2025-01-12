@@ -9,7 +9,7 @@ import Login from './components/Login/Login.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 const App = () => {
-  const url = "http://localhost:4000"
+  const url = "https://food-project-backend-kibv.onrender.com"
   const [admintoken, setToken] = useState(localStorage.getItem('admintoken') ? localStorage.getItem('admintoken') : '');
   useEffect(() => {
     localStorage.setItem('admintoken', admintoken)
