@@ -1,0 +1,20 @@
+{
+    "scm-buttons.showGitCheckout": true,
+    "scm-buttons.showGitCleanAll": true,
+    "scm-buttons.showGitCommitAll": true,
+    "scm-buttons.showGitCommitAllAmend": true,
+    "scm-buttons.showGitCommitAllSigned": true,
+    "scm-buttons.showGitCommitStaged": true,
+    "scm-buttons.showGitCommitStagedAmend": true,
+    "scm-buttons.showGitCommitStagedSigned": true,
+    "scm-buttons.showGitPublish": true,
+    "scm-buttons.showGitPullFrom": true,
+    "scm-buttons.showGitPullRebase": true,
+    "scm-buttons.showGitPushTo": true,
+    "scm-buttons.showGitShowOutput": true,
+    "scm-buttons.showGitStageAll": true,
+    "scm-buttons.showGitStash": true,
+    "scm-buttons.showGitStashApply": true,
+    "scm-buttons.showGitStashApplyLatest": true,
+    "files.autoSave": "afterDelay"
+}
