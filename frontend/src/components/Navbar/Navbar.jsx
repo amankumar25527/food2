@@ -12,14 +12,15 @@ const Navbar = ({setShowLogin}) => {
       setToken("");
       navigate("/")
     }
+    
   return (
     <div className='navbar'>
       <Link to='/'><img src={assets.logo} alt="" className="logo" /></Link>
       <ul className="navbar-menu">
         <Link to='/' onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</Link>
-        <Link to='/' href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</Link>
-        <Link to='/' href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile-App</Link>
-        <Link to='/'  href ='#footer'onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact Us</Link>
+        <Link to='/'  onClick={()=>{setMenu("menu");document.getElementById("explore-menu")?.scrollIntoView({ behavior: "smooth" });} className={menu==="menu"?"active":""}>Menu</Link>
+        <Link to='/'  onClick={()=>{setMenu("mobile-app");document.getElementById("app-download")?.scrollIntoView({ behavior: "smooth" });}} className={menu==="mobile-app"?"active":""}>Mobile-App</Link>
+        <Link to='/'  onClick={()=>{setMenu("contact-us");document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });}} className={menu==="contact-us"?"active":""}>Contact Us</Link>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt=''></img>
