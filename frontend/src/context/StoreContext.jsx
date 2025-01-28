@@ -6,7 +6,8 @@ const StoreContextProvider=(props)=>{
     const url="https://food-project-backend-kibv.onrender.com"
     const[cartItems,setCartItems]=useState({});
     const[token,setToken]=useState("");
-    const[food_list,setFoodList]=useState([])
+    const[food_list,setFoodList]=useState([]);
+    const[loading,setLoading]=useState(true);
     const delivery_fee=100;
     const addToCart=async(itemId)=>{
         if(!cartItems[itemId]){
@@ -40,8 +41,17 @@ const StoreContextProvider=(props)=>{
         return totalAmount;
     }
     const fetchFoodList=async()=>{
-        const response= await axios.get(url+"/api/food/list");
-        setFoodList(response.data.data);
+        try{
+            setLoading(true)
+            const response= await axios.get(url+"/api/food/list");
+            setFoodList(response.data.data);
+        }catch(error){
+            console.log("error in fetching data");
+            setLoading(false)
+        }finally{
+            setLoading(false);
+        }
+        
     }
     const loadCartData=async(token)=>{
         const response=await axios.post(url+"/api/cart/get",{},{headers:{token}});
@@ -59,7 +69,7 @@ const StoreContextProvider=(props)=>{
         
     },[])
     
-    const contextValue={food_list,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount,url,token,setToken,delivery_fee};
+    const contextValue={food_list,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount,url,token,setToken,delivery_fee,loading};
     return(
         <StoreContext.Provider value={contextValue}>
             {props.children}
