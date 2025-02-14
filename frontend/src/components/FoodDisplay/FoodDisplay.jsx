@@ -6,12 +6,12 @@ const FoodDisplay = ({category}) => {
     const {food_list,loading}=useContext(StoreContext)
   return (
      <div> 
-      (loading?{
+         {loading?(
           <div className="food-display-list">
               Loading Food Menu........
           </div>
-      }:
-      {
+      ):
+      (
         <div className='food-display' id="food-display">
         <h2>Top dishes near you</h2>
         <div className="food-display-list">
@@ -22,7 +22,8 @@ const FoodDisplay = ({category}) => {
           })}
         </div>
       </div>
-    }
+    )
+ }           
  </div>     
   )
 }
