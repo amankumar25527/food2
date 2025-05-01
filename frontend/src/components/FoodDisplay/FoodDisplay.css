@@ -1,31 +1,56 @@
-.food-display{
-    margin-top: 30px;
+.food-display {
+  margin-top: 30px;
 }
-.food-display h2{
-    font-size: max(2vw,24px);
-    font-weight: 600;
+
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
 }
-.food-display-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-    margin-top: 30px;
-    gap: 30px;
-    row-gap: 50px;
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 50px;
 }
-.food-skeleton {
-    width: 300px;
-    height: 350px;
-    background: #f0f0f0;
-    border-radius: 10px;
-    animation: shimmer 1.5s infinite linear;
-    margin: 10px;
-  }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: -400px 0;
-    }
-    100% {
-      background-position: 400px 0;
-    }
-  }
+
+/* Spinner Loader */
+.loader-wrapper {
+  width: 100%;
+  min-height: 300px; /* enough height for vertical centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.circle-loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff6347; /* tomato color */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.circle-loader.small {
+  width: 30px;
+  height: 30px;
+  border-width: 4px;
+  margin: 20px auto;
+}
+
+.lazy-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
