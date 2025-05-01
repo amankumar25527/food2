@@ -115,9 +115,11 @@ const PlaceOrder = () => {
   useEffect(()=>{
     if(!token){
       navigate("/cart");
+      toast.error("Please Log In or Sign Up")
     }
     else if(getTotalCartAmount()===0){
       navigate("/cart");
+      toast.error("Add Something In Your Cart")
     }
   },[token])
   return (
