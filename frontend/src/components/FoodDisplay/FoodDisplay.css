@@ -12,3 +12,20 @@
     gap: 30px;
     row-gap: 50px;
 }
+.food-skeleton {
+    width: 300px;
+    height: 350px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    animation: shimmer 1.5s infinite linear;
+    margin: 10px;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -400px 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
