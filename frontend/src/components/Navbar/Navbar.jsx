@@ -23,7 +23,7 @@ const Navbar = ({setShowLogin}) => {
         <Link to='/'  onClick={()=>{setMenu("contact-us");document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });}} className={menu==="contact-us"?"active":""}>Contact Us</Link>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt=''></img>
+        
         <div className="navbar-search-icon">
             <Link to='/cart'><img src={assets.basket_icon} alt=''></img></Link>
             <div className={getTotalCartAmount()===0?"":"dot"}></div>
