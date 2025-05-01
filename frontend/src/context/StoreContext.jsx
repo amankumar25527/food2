@@ -40,34 +40,32 @@ const StoreContextProvider=(props)=>{
         }
         return totalAmount;
     }
-    const fetchFoodList=async()=>{
-        try{
-            setLoading(true)
-            const response= await axios.get(url+"/api/food/list");
+   const fetchFoodList = async () => {
+        try {
+            setLoading(true); // start loading
+            const response = await axios.get(url + "/api/food/list");
             setFoodList(response.data.data);
-        }catch(error){
-            console.log("error in fetching data");
-            setLoading(false)
-        }finally{
-            setLoading(false);
+        } catch (error) {
+            console.error("Error fetching food list:", error);
+        } finally {
+            setLoading(false); // stop loading regardless of success/failure
         }
-        
-    }
+    };
     const loadCartData=async(token)=>{
         const response=await axios.post(url+"/api/cart/get",{},{headers:{token}});
         setCartItems(response.data.cartData)
     }
-    useEffect(()=>{  
-        const  loadData=async()=>{
-            await fetchFoodList();
-            if(localStorage.getItem("token")){
-                setToken(localStorage.getItem("token"));
-                await loadCartData(localStorage.getItem("token"));
-            }
+    useEffect(() => {
+        // Load food list independently to make it show faster
+        fetchFoodList(); 
+    
+        // Handle token and cart in parallel (no need to wait for food list)
+        const tokenFromStorage = localStorage.getItem("token");
+        if (tokenFromStorage) {
+            setToken(tokenFromStorage);
+            loadCartData(tokenFromStorage);
         }
-        loadData();
-        
-    },[])
+    }, []);
     
     const contextValue={food_list,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount,url,token,setToken,delivery_fee,loading};
     return(
