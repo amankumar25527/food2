@@ -66,7 +66,7 @@ const Cart = () => {
             <p>If you have code, Enter it here</p>
             <div className="cart-promocode-input">
               <input type="text" placeholder='promo code' />
-              <button>Submit</button>
+              <button style={{ cursor: 'pointer' }}>Submit</button>
             </div>
           </div>
         </div>
