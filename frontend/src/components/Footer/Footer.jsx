@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Footer.css"
 import { assets } from '../../assets/assets.js'
+import {useNavigate } from "react-router-dom"
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <div className='footer' id='footer'>
       <div className="footer-content">
@@ -17,10 +19,10 @@ const Footer = () => {
         <div className="footer-content-center">
           <h2>COMPANY</h2>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Delivery</li>
-            <li>Privacy Policy</li>
+            <li style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Home</li>
+            <li style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>About</li>
+            <li style={{ cursor: 'pointer' }} onClick={() => navigate('/cart')}>Delivery</li>
+            <li style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Privacy Policy</li>
           </ul>
         </div>
         <div className="footer-content-right">
