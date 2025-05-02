@@ -163,20 +163,20 @@ const PlaceOrder = () => {
           </div>
           <div style={{ cursor: 'pointer' }} className="payment-method">
             <div onClick={()=>setMethod("cod")}  className="payment-option">
-              <input type="radio" id="cod" name="paymentMethod" value="COD" required />
-              <label className="cod">Cash on Delivery (COD)</label>
+              <input style={{ cursor: 'pointer' }} type="radio" id="cod" name="paymentMethod" value="COD" required />
+              <label style={{ cursor: 'pointer' }} className="cod">Cash on Delivery (COD)</label>
             </div>
 
             <div style={{ cursor: 'pointer' }} onClick={()=>setMethod("razorpay")} className="payment-option">
-              <input type="radio" id="razorpay" name="paymentMethod" value="Razorpay" />
+              <input style={{ cursor: 'pointer' }} type="radio" id="razorpay" name="paymentMethod" value="Razorpay" />
               <label className="razorpay">
-                <img src={assets.razorpay_logo} alt="Razorpay" className="razorpay-logo" />
+                <img style={{ cursor: 'pointer' }} src={assets.razorpay_logo} alt="Razorpay" className="razorpay-logo" />
               </label>
             </div>
             <div style={{ cursor: 'pointer' }} onClick={()=>setMethod("stripe")} className="payment-option">
-              <input type="radio" id="stripe" name="paymentMethod" value="stripe" />
+              <input style={{ cursor: 'pointer' }} type="radio" id="stripe" name="paymentMethod" value="stripe" />
               <label className="stripe">
-                <img src={assets.stripe_logo} alt="stripe" className="stripe-logo" />
+                <img style={{ cursor: 'pointer' }}  src={assets.stripe_logo} alt="stripe" className="stripe-logo" />
               </label>
             </div>
           </div>
