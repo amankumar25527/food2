@@ -161,19 +161,19 @@ const PlaceOrder = () => {
               <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + delivery_fee}</b>
             </div>
           </div>
-          <div className="payment-method">
+          <div style={{ cursor: 'pointer' }} className="payment-method">
             <div onClick={()=>setMethod("cod")}  className="payment-option">
               <input type="radio" id="cod" name="paymentMethod" value="COD" required />
               <label className="cod">Cash on Delivery (COD)</label>
             </div>
 
-            <div onClick={()=>setMethod("razorpay")} className="payment-option">
+            <div style={{ cursor: 'pointer' }} onClick={()=>setMethod("razorpay")} className="payment-option">
               <input type="radio" id="razorpay" name="paymentMethod" value="Razorpay" />
               <label className="razorpay">
                 <img src={assets.razorpay_logo} alt="Razorpay" className="razorpay-logo" />
               </label>
             </div>
-            <div onClick={()=>setMethod("stripe")} className="payment-option">
+            <div style={{ cursor: 'pointer' }} onClick={()=>setMethod("stripe")} className="payment-option">
               <input type="radio" id="stripe" name="paymentMethod" value="stripe" />
               <label className="stripe">
                 <img src={assets.stripe_logo} alt="stripe" className="stripe-logo" />
